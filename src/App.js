@@ -1,16 +1,34 @@
 import React, { Component } from 'react';
 import './App.css';
+import Range from './Components/Range';
+import Output from './Components/Output';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+  this.state = {
+ height: 170,
+ weight: 65,
+ bmi: 22.49,
+ bmiClass: 'Normal'
+ }
+}
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>BMI Calculator</h1>
+        <form>
+          <div>
+            <label>Height</label>
+            <Range />
+          </div>
+          <div>
+            <label>Weight</label>
+
+          </div>
+        </form>
+        <br /><br />
+        <Output />
       </div>
     );
   }
